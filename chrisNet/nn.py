@@ -26,6 +26,6 @@ class NeuralNet:
     
     def params_and_grads(self) -> Iterator[Tuple[Tensor, Tensor]]:
         for layer in self.layers:
-            for name, param in layers.param.items():
+            for name, param in self.layers.param.items():
                 grad = layer.grads[name]
                 yield param, grad
